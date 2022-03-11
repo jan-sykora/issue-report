@@ -1,0 +1,17 @@
+syntax = "proto3";
+package bar;
+
+import "google/protobuf/field_mask.proto";
+
+message Baz {
+  repeated string baz = 1;
+}
+
+message Bar {
+  google.protobuf.FieldMask field_mask = 1;
+}
+
+service BarService {
+  rpc DoBar(Bar) returns (Bar);
+  rpc DoBaz(Baz) returns (Baz);
+}

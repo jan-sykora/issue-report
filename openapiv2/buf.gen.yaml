@@ -1,0 +1,10 @@
+version: v1
+managed:
+  enabled: true
+  go_package_prefix:
+    default: github.com/foo
+    except:
+      - buf.build/googleapis/googleapis
+plugins:
+  - name: openapiv2
+    out: gen/openapiv2
